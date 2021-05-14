@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react'
-import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import Category from './component/Category';
 import Packaging from './component/Packaging'
 import OrderSuccessPage from './component/OrderSuccessPage';
@@ -192,8 +192,8 @@ class App extends React.Component {
 			<div class="App overflow-hidden" style={{ minHeight: "100vh", position: "relative", backgroundColor: '#ffd6b47d' }}>
 				<ErrorBoundary>
 					<Switch>
-						<Route path='/' exact render={() => (<Landing />)} />
-						<Route path='/' render={() => (
+						<Route path='/webapp-ui' exact render={() => (<Landing />)} />
+						<Route path='/webapp-ui' render={() => (
 							<div style={{ minHeight: 'calc(100vh - 290px)' }}>
 								<BackgroundComponent />
 								<Nav user={this.state.user} updateUserInfo={this.updateUserInfo} isAdmin={this.state.isAdmin} scrolled={this.state.scrolled} />
@@ -207,7 +207,7 @@ class App extends React.Component {
 										<Route path='/categories/:categoryId/packaging' render={(props) => (
 											<Packaging cart={this.state.cart} cartLoading={this.state.cartLoading} onClickAdd={this.onClickAdd} onClickSub={this.onClickSub} onClickUpdate={this.onClickUpdate} updateCart={this.updateCart} renderCheckout={true} props={props} isAdmin={this.state.isAdmin} />
 										)} />
-										<Route path='/categories' render={(props) => (
+										<Route path='/webapp-ui/categories' render={(props) => (
 											<Category isAdmin={this.state.isAdmin} props={props} />
 										)} />
 										<Route path='/order/success' exact render={(props) => (<OrderSuccessPage {...props} />)} />
@@ -240,7 +240,7 @@ class App extends React.Component {
 								<Footer />
 							</div>
 						)} />
-					</Switch>
+						</Switch>
 				</ErrorBoundary>
 			</div>
 		)
