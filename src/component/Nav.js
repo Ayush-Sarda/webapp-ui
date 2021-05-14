@@ -158,14 +158,14 @@ class Nav extends React.Component {
                                             <span class="focus-border"></span>
                                         </div>
                                     </li>
-                                    <li class="nav-item ">
+                                    {/* <li class="nav-item ">
                                         <Link to='/cart'>
                                             <div class="web-link-container">
                                                 <a class="nav-link web-link" style={textColor}>Cart</a>
                                                 <span class="focus-border"></span>
                                             </div>
                                         </Link>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             )
                         }
