@@ -5,6 +5,7 @@ import '../css/Landing.css'
 import Loading from './Loading'
 import $ from 'jquery'
 import Sleep from '../utils/Sleep'
+const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 export default class Landing extends React.Component {
 
@@ -17,7 +18,7 @@ export default class Landing extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('/categories')
+        axios.get(BACKEND_URL + '/categories')
             .then(res => {
                 this.setState({ categories: res.data, loading: false })
             }).catch(error => {
