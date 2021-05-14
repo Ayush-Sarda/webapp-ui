@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Link, Redirect } from 'react-router-dom'
 import '../css/Nav.css'
 import ErrorComponent from './ErrorComponent'
+const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 class Nav extends React.Component {
 
@@ -16,7 +17,7 @@ class Nav extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('/categories')
+        axios.get(BACKEND_URL + '/categories')
             .then(res => {
                 this.setState({ categories: res.data })
             }).catch(error => {
@@ -36,7 +37,7 @@ class Nav extends React.Component {
 
     handleClick = event => {
         event.preventDefault()
-        axios.get('/logout')
+        axios.get(BACKEND_URL + '/logout')
             .then((res) => {
                 this.props.updateUserInfo("", false)
                 localStorage.removeItem('user')

@@ -5,6 +5,7 @@ import axios from 'axios'
 import Input from './elements/Input'
 import '../css/Auth.css'
 import GoogleButton from './GoogleButton'
+const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 class Login extends React.Component {
 
@@ -30,12 +31,12 @@ class Login extends React.Component {
 
     onSubmit = (event) => {
         event.preventDefault()
-        axios.post('/login', { username: this.state.input.password, password: this.state.input.password })
+        axios.post(BACKEND_URL + '/login', { username: this.state.input.password, password: this.state.input.password })
             .then(res => {
                 console.log(res)
                 localStorage.setItem('user', res.data.user)
                 this.props.updateUserInfo(res.data.user, res.data.isAdmin)
-                axios.get('/cart')
+                axios.get(BACKEND_URL + '/cart')
                     .then(cart => {
                         this.props.updateCart(cart.data)
                         this.props.history.go(-1)

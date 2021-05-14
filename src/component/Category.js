@@ -7,6 +7,7 @@ import AllCategory from './AllCategory'
 import AddCategory from './admin/AddCategory'
 import ErrorComponent from './ErrorComponent'
 import axios from 'axios'
+const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 class Category extends react.Component {
     constructor(props) {
@@ -23,7 +24,7 @@ class Category extends react.Component {
     }
 
     async componentDidMount() {
-        axios.get('/categories')
+        axios.get(BACKEND_URL + '/categories')
             .then(res => {
                 this.setState({
                     categories: res.data,

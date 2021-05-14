@@ -4,6 +4,7 @@ import Loading from './Loading'
 import ScrollJS from '../js/ScrollOnRedirect'
 import UserOrderComponent from './UserOrderComponent'
 import ErrorComponent from './ErrorComponent'
+const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 
 export default class UserOrders extends React.Component {
@@ -16,7 +17,7 @@ export default class UserOrders extends React.Component {
     }
 
     async componentDidMount() {
-        axios.get('/orders/all')
+        axios.get(BACKEND_URL + '/orders/all')
             .then((res) => {
                 this.setState({
                     orders: res.data,

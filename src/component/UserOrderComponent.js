@@ -3,6 +3,7 @@ import axios from 'axios'
 import ProgressComponent from './ProgressComponent'
 import '../css/Order.css'
 import OrderSummaryComponent from './OrderSummaryComponent'
+const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 export default class UserOrderComponent extends React.Component {
 
@@ -24,7 +25,7 @@ export default class UserOrderComponent extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault()
-        axios.post(`/orders/${this.props.order._id}/cancel`)
+        axios.post(`${BACKEND_URL}/orders/${this.props.order._id}/cancel`)
             .then(res => {
                 window.location.reload()
             }).catch(error => {

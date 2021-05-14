@@ -4,6 +4,7 @@ import axios from 'axios'
 import FormValidation from '../../js/FormValidation'
 import Input from '../elements/Input'
 import ErrorComponent from '../ErrorComponent'
+const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 export default class EditPackaging extends React.Component {
 
@@ -20,7 +21,7 @@ export default class EditPackaging extends React.Component {
 
     updateParentState = async (data) => {
         const promise = new Promise(async (resolve, reject) => {
-            axios.get(`/categories/${this.props.props.match.params.categoryId}/packaging`)
+            axios.get(`${BACKEND_URL}/categories/${this.props.props.match.params.categoryId}/packaging`)
                 .then(res => {
                     this.props.updateState(res.data)
 
@@ -36,7 +37,7 @@ export default class EditPackaging extends React.Component {
                         }
                     }
                 })
-            axios.get('/cart/session-cart')
+            axios.get(BACKEND_URL + '/cart/session-cart')
                 .then(res => {
                     this.props.updateCart(res.data)
                     resolve('success')
@@ -90,7 +91,7 @@ export default class EditPackaging extends React.Component {
             price: this.state.input.price,
             gst: this.state.input.gst
         }
-        axios.post(`/categories/${this.props.props.match.params.categoryId}/packaging/${this.props.props.match.params.packagingId}`, { packaging: packaging })
+        axios.post(`${BACKEND_URL}/categories/${this.props.props.match.params.categoryId}/packaging/${this.props.props.match.params.packagingId}`, { packaging: packaging })
             .then((res) => {
                 this.updateParentState(res.data)
             }).catch(error => {

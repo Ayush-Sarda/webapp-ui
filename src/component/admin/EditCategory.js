@@ -4,6 +4,7 @@ import axios from 'axios'
 import FormValidation from '../../js/FormValidation'
 import Input from '../elements/Input'
 import ErrorComponent from '../ErrorComponent'
+const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 export default class EditCategory extends React.Component {
 
@@ -35,7 +36,7 @@ export default class EditCategory extends React.Component {
 
     updateParentState = async (data) => {
         const promise = new Promise(async (resolve, reject) => {
-            axios.get('/categories')
+            axios.get(BACKEND_URL + '/categories')
                 .then((res) => {
                     this.props.updateState(res.data)
                     resolve(res)
@@ -67,7 +68,7 @@ export default class EditCategory extends React.Component {
             description: this.state.input.description,
             url: this.state.input.url
         }
-        axios.post(`/categories/${this.props.category._id}`, { category: category })
+        axios.post(`${BACKEND_URL}/categories/${this.props.category._id}`, { category: category })
             .then((res) => {
                 this.updateParentState(res.data)
             }).catch(error => {

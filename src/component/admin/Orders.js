@@ -3,6 +3,7 @@ import React from 'react'
 import ErrorComponent from '../ErrorComponent'
 import AdminOrderComponent from './AdminOrderComponent'
 import '../../css/AdminOrders.css'
+const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 export default class Orders extends React.Component {
 
@@ -19,7 +20,7 @@ export default class Orders extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('/orders/admin')
+        axios.get(BACKEND_URL + '/orders/admin')
             .then(res => {
                 console.log(res.data)
                 this.setState({

@@ -2,6 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import Button from './elements/Button'
 import '../css/Packaging.css'
+const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 export default class PackagingComponent extends React.Component {
     constructor(props) {
@@ -14,7 +15,7 @@ export default class PackagingComponent extends React.Component {
 
     updateParentState = async () => {
         const promise = new Promise(async (resolve, reject) => {
-            axios.get(`/categories/${this.props.match.params.categoryId}/packaging`)
+            axios.get(`${BACKEND_URL}/categories/${this.props.match.params.categoryId}/packaging`)
                 .then(async (res) => {
                     this.props.updateState(res.data)
                     window.location.reload()
@@ -37,9 +38,9 @@ export default class PackagingComponent extends React.Component {
 
     deletePackaging = (event) => {
         event.preventDefault()
-        axios.post(`/categories/${this.props.match.params.categoryId}/packaging/${this.props.packaging._id}/delete`)
+        axios.post(`${BACKEND_URL}/categories/${this.props.match.params.categoryId}/packaging/${this.props.packaging._id}/delete`)
             .then(async (res) => {
-                axios.get('/cart')
+                axios.get(BACKEND_URL + '/cart')
                     .then(res => {
                         this.props.updateCart(res.data)
                     }).catch(error => {

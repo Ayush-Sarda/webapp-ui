@@ -7,6 +7,7 @@ import { Switch, Route } from 'react-router-dom'
 import AddPackaging from './admin/AddPackaging'
 import axios from 'axios'
 import ErrorComponent from './ErrorComponent'
+const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 export default class Packaging extends React.Component {
     constructor(props) {
@@ -37,7 +38,7 @@ export default class Packaging extends React.Component {
     async componentDidMount() {
         const { match: { params } } = this.props.props;
         await sleep(200)
-        axios.get(`/categories/${params.categoryId}/packaging`)
+        axios.get(`${BACKEND_URL}/categories/${params.categoryId}/packaging`)
             .then(res => {
                 this.setState({
                     isLoading: false,

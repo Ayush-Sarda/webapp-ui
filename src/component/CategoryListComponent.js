@@ -2,6 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import '../css/CategoryList.css'
 import $ from 'jquery'
+const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 export default class CategoryListComponent extends React.Component {
     constructor(props) {
@@ -12,7 +13,7 @@ export default class CategoryListComponent extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('/categories')
+        axios.get(BACKEND_URL + '/categories')
             .then(res => {
                 this.setState({ categories: res.data })
             }).catch(error => {

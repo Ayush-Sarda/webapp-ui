@@ -7,6 +7,7 @@ import SubmitButton from './elements/SubmitButton'
 import CartComponent from './CartComponent'
 import ErrorComponent from './ErrorComponent'
 import '../css/OrderForm.css'
+const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 export default class OrderForm extends react.Component {
     constructor(props) {
@@ -71,7 +72,7 @@ export default class OrderForm extends react.Component {
             details: details,
             amount: this.props.cart.totalPrice
         }
-        axios.post('/orders', body)
+        axios.post(BACKEND_URL + '/orders', body)
             .then((res) => {
                 this.setState({
                     redirect: '/order/success',

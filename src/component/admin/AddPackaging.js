@@ -4,6 +4,7 @@ import axios from 'axios'
 import FormValidation from '../../js/FormValidation'
 import Input from '../elements/Input'
 import ErrorComponent from '../ErrorComponent'
+const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 export default class AddPackaging extends React.Component {
 
@@ -27,7 +28,7 @@ export default class AddPackaging extends React.Component {
 
     updateParentState = async (data) => {
         const promise = new Promise(async (resolve, reject) => {
-            axios.get(`/categories/${this.props.props.match.params.categoryId}/packaging`)
+            axios.get(`${BACKEND_URL}/categories/${this.props.props.match.params.categoryId}/packaging`)
                 .then(async (res) => {
                     this.props.updateState(res.data)
                     resolve(res)
@@ -57,7 +58,7 @@ export default class AddPackaging extends React.Component {
             price: this.state.input.price,
             gst: this.state.input.gst
         }
-        axios.post(`/categories/${this.props.props.match.params.categoryId}/packaging`, { packaging: packaging })
+        axios.post(`${BACKEND_URL}/categories/${this.props.props.match.params.categoryId}/packaging`, { packaging: packaging })
             .then((res) => {
                 this.updateParentState(res.data)
             }).catch(error => {

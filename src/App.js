@@ -69,7 +69,7 @@ class App extends React.Component {
 		prevState.cart.items[packagingId].qty++
 		prevState.cart.totalQty++
 		prevState.cart.totalPrice += prevState.cart.items[packagingId].item.price
-		axios.post('/cart/update', { cart: prevState.cart, method: 'ADD', packagingId: packagingId })
+		axios.post(BACKEND_URL + '/cart/update', { cart: prevState.cart, method: 'ADD', packagingId: packagingId })
 			.then(res => {
 				this.setState({
 					cart: res.data,
@@ -104,7 +104,7 @@ class App extends React.Component {
 			prevState.cart.totalQty--
 			prevState.cart.totalPrice -= prevState.cart.items[packagingId].item.price
 		}
-		axios.post('/cart/update', { cart: prevState.cart, method: 'SUBTRACT', packagingId: packagingId })
+		axios.post(BACKEND_URL + '/cart/update', { cart: prevState.cart, method: 'SUBTRACT', packagingId: packagingId })
 			.then(res => {
 				this.setState({
 					cart: res.data,

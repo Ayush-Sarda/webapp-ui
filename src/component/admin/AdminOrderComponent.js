@@ -4,6 +4,7 @@ import ProgressComponent from '../ProgressComponent'
 import ErrorComponent from '../ErrorComponent'
 import '../../css/Order.css'
 import OrderSummaryComponent from '../OrderSummaryComponent'
+const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 export default class AdminOrderComponent extends React.Component {
 
@@ -26,7 +27,7 @@ export default class AdminOrderComponent extends React.Component {
             this.state.invoice,
             this.state.invoice.name
         )
-        axios.post(`/orders/${this.props.order._id}/upload-invoice`, formData)
+        axios.post(`${BACKEND_URL}/orders/${this.props.order._id}/upload-invoice`, formData)
             .then(res => {
                 window.location.reload()
             }).catch(error => {
@@ -60,7 +61,7 @@ export default class AdminOrderComponent extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault()
-        axios.post(`/orders/${this.props.order._id}/update-status`, { status: this.state.status })
+        axios.post(`${BACKEND_URL}/orders/${this.props.order._id}/update-status`, { status: this.state.status })
             .then(res => {
                 window.location.reload()
             }).catch(error => {

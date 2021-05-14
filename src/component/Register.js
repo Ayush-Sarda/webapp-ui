@@ -4,6 +4,7 @@ import FormValidation from '../js/FormValidation'
 import Input from './elements/Input'
 import ErrorComponent from './ErrorComponent'
 import GoogleButton from './GoogleButton'
+const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 class Register extends React.Component {
 
@@ -37,7 +38,7 @@ class Register extends React.Component {
             username: this.state.input.username,
             password: this.state.input.password,
         }
-        axios.post('/register', body)
+        axios.post(BACKEND_URL + '/register', body)
             .then((res) => {
                 localStorage.setItem('user', res.data.user)
                 this.setState({
