@@ -25,6 +25,7 @@ import NavbarScroll from './js/NavbarScroll';
 import CategoryListComponent from './component/CategoryListComponent';
 import walnut from './walnut.png'
 import BackgroundComponent from './component/BackgroundComponent';
+const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 class App extends React.Component {
 	constructor(props) {
@@ -140,7 +141,7 @@ class App extends React.Component {
 
 	async componentDidMount() {
 		window.addEventListener('scroll', this.scrollListener)
-
+		console.log(BACKEND_URL)
 		const getQueryParams = window.location.search.replace('?', '').split('&').reduce((r, e) => (r[e.split('=')[0]] = decodeURIComponent(e.split('=')[1]), r), {})
 		const user = getQueryParams.user
 		if (user) {
@@ -152,7 +153,7 @@ class App extends React.Component {
 				user: loggedInUser
 			})
 		}
-		axios.get('/isAdmin')
+		axios.get(BACKEND_URL + '/isAdmin')
 			.then(res => {
 				this.setState({
 					isAdmin: true
@@ -170,7 +171,7 @@ class App extends React.Component {
 					}
 				}
 			})
-		axios.get('/cart')
+		axios.get(BACKEND_URL + '/cart')
 			.then(res => {
 				this.setState({
 					cart: res.data
