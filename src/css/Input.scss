@@ -1,0 +1,59 @@
+.rdf__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+}
+
+.rdf__field {
+  margin-top: 0px;
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.274);
+  transition: all 0.3s;
+  outline: 0;
+  font-size: 1.3rem;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.5s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .rdf__label {
+    font-size: 1.2rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.rdf__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.521);
+}
+
+.rdf__field:focus {
+  ~ .rdf__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.3s;
+    font-size: 1rem;
+    color: black;
+    font-weight:400; 
+  }
+  padding-bottom: 6px;
+  border-image-slice: 1;
+  color: black;
+    border-color: rgba(0, 0, 0, 0.61);   
+}
+.rdf__field{
+  &:required,&:invalid { box-shadow:none; }
+}

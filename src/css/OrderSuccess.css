@@ -1,0 +1,9 @@
+.rdf-success-text {
+    text-align: left;
+}
+@media (max-width: 768px) {
+    .rdf-success-text {
+        text-align: center;
+        margin-top: 1rem;
+    }
+}

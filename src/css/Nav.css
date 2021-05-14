@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+#header {
+    transition: all 0.5s;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.05);
+    background: -moz-linear-gradient(white, white);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.navbar-brand {
+    font-family: 'Niconne', cursive;
+    text-shadow: 1px 1px 0px #eb452b, 
+                  2px 2px 0px #efa032, 
+                  3px 3px 0px #46b59b, 
+                  4px 4px 0px #017e7f, 
+                  5px 5px 0px #052939,
+                  6px 6px 0px #c11a2b, 
+                  7px 7px 0px #c11a2b, 
+                  8px 8px 0px #c11a2b;
+}
+
+.web-link-container {
+    position: relative;
+}
+
+.web-link {
+    padding: 7px 0;
+}
+
+.web-link ~ .focus-border{position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #3399FF; transition: 0.4s;}
+.navbar-collapse.collapse:not(.show) .web-link:hover ~ .focus-border{width: 100%; transition: 0.6s ease;}
+
+.dropdown-item {
+    color: rgb(63,42,20, 0.75) !important;
+}
+
+.navbar-collapse.collapse .dropdown-menu {
+    background: white !important;
+    font-weight: 300;
+}
+.navbar-collapse.collapse.show .dropdown-menu {
+    background: transparent !important;
+    border: 0px;
+    margin-top: 0px;
+    padding: 0px;
+    font-weight: 300;
+}

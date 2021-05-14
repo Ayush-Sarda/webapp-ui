@@ -1,0 +1,11 @@
+.nav-link {
+    border-width: 1px !important;
+    border-color: transparent transparent #bbc3ca transparent !important;
+}
+
+.nav-link.active {
+    border-color: #bbc3ca #bbc3ca transparent #bbc3ca !important;
+    background-color: #e18841 !important;
+    color: white !important;
+    border-bottom-width: 0px !important;
+}

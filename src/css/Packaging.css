@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+.rdf-packaging {
+    background-color: transparent;
+    transition: all 0.2s;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.05);
+    background: -moz-linear-gradient(white, white);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+.rdf-packaging:hover {
+    transform: scale(1.05);
+    backdrop-filter: blur(12px);
+}
+.rdf-packaging-header-img {
+    transition: all 0.3s;
+    width: 300px;
+}
+.rdf-packaging-header-img:hover {
+    transform: scale(1.07);
+}
+@media (max-width: 768px) {
+    .rdf-packaging-header-img {
+        width: 40vw;
+    }
+}
+.rdf-packaging-header {
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.05);
+    background: -moz-linear-gradient(white, white);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    font-family: 'Niconne', cursive;
+    transition: all 0.3s;
+}
+.rdf-packaging-header:hover {
+    backdrop-filter: blur(20px);
+}
+.rdf-packaging-header p {
+    font-size: 5vw;
+    text-shadow: 1px 1px 0px #eb452b, 
+                  2px 2px 0px white, 
+                  3px 3px 0px white,
+                  4px 4px 0px #eb452b; 
+}
+.rdf-category-list {
+    transition: all 0.2s;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.05);
+    background: -moz-linear-gradient(white, white);
+    backdrop-filter: blur(5px);
+    list-style-type: none;
+}
+.rdf-category-list:hover {
+    backdrop-filter: blur(12px);
+}
+
+@media (max-width: 400px) {
+    .rdf-packaging-header {
+        justify-content: center !important;
+    }
+    .rdf-packaging-header-img {
+        margin-inline: 20px !important;
+        width: 50vw !important;
+    }
+}

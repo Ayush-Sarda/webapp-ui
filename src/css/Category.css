@@ -1,0 +1,117 @@
+.web-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow: auto;
+    scrollbar-gutter: auto;
+    width: 100%;
+	  scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.web-container .web-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+	  scroll-snap-align: start;
+}
+
+.web-container .web-section .web-content {
+  position: absolute;
+	bottom: 7%;
+	left: 7%;
+  max-width: 80%;
+}
+
+.web-container .web-section .web-content h2 {
+    background-color: transparent;
+    transition: all 0.2s;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.05);
+    background: -moz-linear-gradient(white, white);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(9px);
+	color: black;
+	font-weight: 700;
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 2em;
+}
+
+.web-container .web-section .web-content p {
+	background-color: transparent;
+    transition: all 0.2s;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.05);
+    background: -moz-linear-gradient(white, white);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(9px);
+	color: black;
+	font-weight: 400;
+	padding: 10px 20px;
+	margin-top: 10px;
+  max-height: 335px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* @media (min-width: 576px) {
+  .web-container .web-section .web-content {
+    max-width: 461px;
+  }
+}
+@media (min-width: 768px) {
+  .web-container .web-section .web-content {
+    max-width: 614px;
+  }
+}
+@media (min-width: 992px) {
+  .web-container .web-section .web-content {
+    max-width: 794px;
+  }
+}
+@media (min-width: 1200px) {
+  .web-container .web-section .web-content {
+    max-width: 960px;
+  }
+} */
+
+/* scroll bar */
+.web-container::-webkit-scrollbar {
+  width: 8px;
+  background-color: black;
+}
+.web-container::-webkit-scrollbar-track {
+  background-color: rgba(202, 196, 196, 1);
+  padding: 10px;
+}
+.web-container::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  border: 1.5px solid transparent;
+  background-clip: content-box;
+  background-color: rgba(53, 49, 49, 0.7);
+}
+.web-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(53, 49, 49);
+}
+
+.web-container .web-section:nth-child(1) {
+    background: #f00 url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/full-frame-shot-of-raw-almonds-royalty-free-image-683814187-1537885519.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.web-container .web-section:nth-child(2) {
+    background: #0f0 url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/how-to-watch-all-the-marvel-movies-in-order-doctor-strange-better-1568313196.jpg?crop=0.563xw:1.00xh;0.366xw,0&resize=768:*');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.web-container .web-section:nth-child(3) {
+    background: #00f url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/how-to-watch-all-the-marvel-movies-in-order-guardians-of-the-galaxxy-vol-2-1568312335.jpg?crop=0.5293569431500466xw:1xh;center,top&resize=768:*');
+    background-size: cover;
+    background-attachment: fixed;
+}

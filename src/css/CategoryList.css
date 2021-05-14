@@ -1,0 +1,10 @@
+.rdf-list-link:hover {
+    color: #89bd75 !important;
+}
+li.active a {
+    color: #89bd75 !important;
+    font-weight: 700 !important;
+}
+li.active {
+    border-right: 2px solid #89bd75 !important;
+}

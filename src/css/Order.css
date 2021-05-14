@@ -1,0 +1,19 @@
+.rdf-order-container {
+    background: transparent;
+    transition: all 0.2s;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.05);
+    background: -moz-linear-gradient(white, white);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+.rdf-order-container:hover {
+    backdrop-filter: blur(15px);
+}
+.rdf-order-summary {
+    background: transparent;
+    transition: all 0.2s;
+    backdrop-filter: blur(6px);
+}
