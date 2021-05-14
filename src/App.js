@@ -214,7 +214,7 @@ class App extends React.Component {
 										<Route path='/order' exact render={() => (
 											<OrderForm cart={this.state.cart} cartLoading={this.state.cartLoading} onClickAdd={this.onClickAdd} onClickSub={this.onClickSub} onClickUpdate={this.onClickUpdate} />
 										)} />
-										<Route path='/login' exact render={(props) => (
+										<Route path='/webapp-ui/login' exact render={(props) => (
 											!this.state.user ?
 												<Login updateUserInfo={this.updateUserInfo} {...props} updateCart={this.updateCart} />
 												:
