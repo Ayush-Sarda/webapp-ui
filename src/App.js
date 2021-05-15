@@ -194,12 +194,6 @@ class App extends React.Component {
 					<Router basename='/'>
 						<Switch>
 							<Route path='/' exact render={() => (<Landing />)} />
-							<Route path='/login' exact render={(props) => (
-								!this.state.user ?
-									<Login updateUserInfo={this.updateUserInfo} {...props} updateCart={this.updateCart} />
-									:
-									<Redirect to='/' />
-							)} />
 							<Route path='/' render={() => (
 								<div style={{ minHeight: 'calc(100vh - 290px)' }}>
 									<BackgroundComponent />

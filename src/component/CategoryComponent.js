@@ -15,7 +15,9 @@ export default class CategoryComponent extends React.Component {
                     <div class="position-absolute d-flex flex-column" style={{ top: '7%', right: '0%' }}>
                         {this.props.isAdmin === true ?
                             <div>
-                                <a class="btn btn-warning btn-sm mx-2" href={`/categories/${this.props.category._id}/edit`}>Edit</a>
+                                <Link to={`/categories/${this.props.category._id}/edit`} >
+                                    <a class="btn btn-warning btn-sm mx-2">Edit</a>
+                                </Link>
                             </div>
                             :
                             null

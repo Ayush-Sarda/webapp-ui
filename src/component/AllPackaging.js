@@ -4,6 +4,7 @@ import CartComponent from './CartComponent'
 import ScrollJS from '../js/ScrollOnRedirect'
 import CategoryListComponent from './CategoryListComponent';
 import '../css/Packaging.css'
+import { Link } from 'react-router-dom';
 
 
 export default class AllPackaging extends React.Component {
@@ -41,7 +42,9 @@ export default class AllPackaging extends React.Component {
                         <div class="row d-flex justify-content-center">
                             {this.props.isAdmin === true ?
                                 <div class="my-2">
-                                    <a href={`/categories/${this.props.match.params.categoryId}/packaging/add`} class="btn btn-outline-primary">Add a new Packaging</a>
+                                    <Link to={`/categories/${this.props.match.params.categoryId}/packaging/add`}>
+                                        <a class="btn btn-outline-primary">Add a new Packaging</a>
+                                    </Link>
                                 </div>
                                 :
                                 null

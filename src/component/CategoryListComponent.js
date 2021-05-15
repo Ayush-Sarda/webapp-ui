@@ -2,6 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import '../css/CategoryList.css'
 import $ from 'jquery'
+import { Link } from 'react-router-dom'
 const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 export default class CategoryListComponent extends React.Component {
@@ -40,9 +41,11 @@ export default class CategoryListComponent extends React.Component {
                 </li>
                 {this.state.categories.map(category => (
                     <li id={category._id} class={`px-2 my-1 d-flex justify-content-end ${category._id === this.props.id ? 'active' : null}`}>
-                        <a class="text-dark fs-5 fw-normal rdf-list-link" href={`/categories/${category._id}/packaging`}>
+                        <Link to={`/categories/${category._id}/packaging`} >
+                        <a class="text-dark fs-5 fw-normal rdf-list-link">
                             {category.name}
                         </a>
+                        </Link>
                     </li>
                 ))}
             </ul>

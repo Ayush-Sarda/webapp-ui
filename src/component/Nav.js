@@ -89,7 +89,9 @@ class Nav extends React.Component {
                 }
             }}>
                 <div class="container-fluid">
-                    <a class="navbar-brand ms-3" style={brandColor} href="/">Dryfruits</a>
+                    <Link to="/" >
+                        <a class="navbar-brand ms-3" style={brandColor}>Dryfruits</a>
+                    </Link>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -104,7 +106,11 @@ class Nav extends React.Component {
                                                 <span class="focus-border"></span>
                                                 <ul class="dropdown-menu" aria-labelledby="categoryDropdownButton" style={{ maxWidth: '100px', background: 'transparent !important' }}>
                                                     {this.state.categories.map(category => (
-                                                        <li><a class="dropdown-item" href={`/categories/${category._id}/packaging`}>{category.name}</a></li>
+                                                        <li>
+                                                            <Link to={`/categories/${category._id}/packaging`} >
+                                                                <a class="dropdown-item">{category.name}</a>
+                                                            </Link>
+                                                        </li>
                                                     ))}
                                                 </ul>
                                             </div>
@@ -120,7 +126,10 @@ class Nav extends React.Component {
                                         <a class="nav-link web-link dropdown-toggle" type="button" id="adminDropdownButton" data-bs-toggle="dropdown" aria-expanded="false" style={textColor}>Admin</a>
                                         <span class="focus-border"></span>
                                         <ul class="dropdown-menu" aria-labelledby="adminDropdownButton" style={{ maxWidth: '100px' }}>
-                                            <li><a class="dropdown-item" href="/admin/orders">All Orders</a></li>
+                                            <li>
+                                                <Link to='/admin/orders'><a class="dropdown-item" >All Orders</a>
+                                                </Link>
+                                            </li>
                                         </ul>
                                     </div>
                                 </li>
@@ -136,7 +145,11 @@ class Nav extends React.Component {
                                             <a class="nav-link web-link dropdown-toggle" type="button" id="userDropdownButton" data-bs-toggle="dropdown" aria-expanded="false" style={textColor}>{this.props.user}</a>
                                             <span class="focus-border"></span>
                                             <ul class="dropdown-menu" aria-labelledby="userDropdownButton" style={{ maxWidth: '100px' }}>
-                                                <li><a class="dropdown-item" href="/order/all">Orders</a></li>
+                                                <li>
+                                                    <Link to="/order/all">
+                                                        <a class="dropdown-item" href="/order/all">Orders</a>
+                                                    </Link>
+                                                </li>
                                                 <li><a class="dropdown-item" onClick={this.handleClick} style={{ cursor: "pointer" }}>Logout</a></li>
                                                 {/* <li><a class="dropdown-item" href="/cart">Cart</a></li> */}
                                             </ul>
@@ -148,13 +161,17 @@ class Nav extends React.Component {
                                 <ul class="navbar-nav ms-auto">
                                     <li class="nav-item ">
                                         <div class="web-link-container">
-                                            <a class="nav-link web-link" style={textColor} href="/login">Login</a>
+                                            <Link to='/login'>
+                                                <a class="nav-link web-link" style={textColor} >Login</a>
+                                            </Link>
                                             <span class="focus-border"></span>
                                         </div>
                                     </li>
                                     <li class="nav-item ">
                                         <div class="web-link-container">
-                                            <a class="nav-link web-link" style={textColor} href="/register">Sign Up</a>
+                                            <Link to='/register'>
+                                                <a class="nav-link web-link" style={textColor} >Sign Up</a>
+                                            </Link>
                                             <span class="focus-border"></span>
                                         </div>
                                     </li>

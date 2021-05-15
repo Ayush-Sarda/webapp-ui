@@ -1,6 +1,7 @@
 import React from 'react';
 import CategoryComponent from './CategoryComponent'
 import ScrollJS from '../js/ScrollOnRedirect'
+import { Link } from 'react-router-dom';
 
 export default class AllCategory extends React.Component {
 
@@ -19,7 +20,9 @@ export default class AllCategory extends React.Component {
                 <div class="position-absolute d-flex flex-column" style={{ top: '10%', right: '10%',zIndex: '1000' }}>
                     {this.props.isAdmin === true ?
                         <div>
-                            <a class="btn btn-primary" href={`/categories/add`}>Add a new category</a>
+                            <Link to='/categories/add'>
+                                <a class="btn btn-primary">Add a new category</a>
+                            </Link>
                         </div>
                         :
                         null

@@ -43,7 +43,8 @@ class CartComponent extends react.Component {
     render() {
         return (
             <div id='cart' class="p-3 pb-0" style={{
-                height: 'min-content', transition: 'all 0.4s' }} ref={el => {
+                height: 'min-content', transition: 'all 0.4s'
+            }} ref={el => {
                 // if (el) {
                 //     if (this.state.scrolled && window.outerWidth > 992) {
                 //         el.style.setProperty('position', 'fixed')
@@ -56,9 +57,9 @@ class CartComponent extends react.Component {
             }}>
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
                     <span>
-                        <h3 class=" fs-2 fw-bold" style={{ color: '#e18841'}}>Cart</h3>
+                        <h3 class=" fs-2 fw-bold" style={{ color: '#e18841' }}>Cart</h3>
                         {this.props.cart.items ?
-                            <h5 class="fs-6 " style={{ color: '#e18841'}}>{Object.keys(this.props.cart.items).length} items</h5>
+                            <h5 class="fs-6 " style={{ color: '#e18841' }}>{Object.keys(this.props.cart.items).length} items</h5>
                             :
                             <h5 class="fs-6 " style={{ color: '#2c2d30' }}>Empty</h5>
                         }
@@ -107,9 +108,11 @@ class CartComponent extends react.Component {
                         null
                         :
                         <li class="px-0 d-flex flex-row-reverse row px-0" style={{ maxWidth: "1000px", border: "0px", background: 'transparent' }}>
-                            <a href={`/order`} class="px-0">
-                                <Button props={{ text: 'Checkout', bgColor: 'rdf-btn-primary', textColor: 'rdf-btn-dark', width: '1000px', height: '50px' }} />
-                            </a>
+                            <Link to={`/order`}>
+                                <a class="px-0">
+                                    <Button props={{ text: 'Checkout', bgColor: 'rdf-btn-primary', textColor: 'rdf-btn-dark', width: '1000px', height: '50px' }} />
+                                </a>
+                            </Link>
                         </li>
                     }
                 </ul>
