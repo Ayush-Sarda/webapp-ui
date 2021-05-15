@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link, Redirect } from 'react-router-dom'
 import '../css/Nav.css'
 import ErrorComponent from './ErrorComponent'
-const BACKEND_URL = "http://dryfruitbackend-env-1.eba-ipwmze3s.ap-south-1.elasticbeanstalk.com/api"
+const BACKEND_URL = "https://dryfruitbackend-env-1.eba-ipwmze3s.ap-south-1.elasticbeanstalk.com/api"
 
 class Nav extends React.Component {
 

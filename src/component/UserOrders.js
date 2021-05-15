@@ -4,7 +4,7 @@ import Loading from './Loading'
 import ScrollJS from '../js/ScrollOnRedirect'
 import UserOrderComponent from './UserOrderComponent'
 import ErrorComponent from './ErrorComponent'
-const BACKEND_URL = "http://dryfruitbackend-env-1.eba-ipwmze3s.ap-south-1.elasticbeanstalk.com/api"
+const BACKEND_URL = "https://dryfruitbackend-env-1.eba-ipwmze3s.ap-south-1.elasticbeanstalk.com/api"
 
 
 export default class UserOrders extends React.Component {

@@ -4,7 +4,7 @@ import axios from 'axios'
 import FormValidation from '../../js/FormValidation'
 import Input from '../elements/Input'
 import ErrorComponent from '../ErrorComponent'
-const BACKEND_URL = "http://dryfruitbackend-env-1.eba-ipwmze3s.ap-south-1.elasticbeanstalk.com/api"
+const BACKEND_URL = "https://dryfruitbackend-env-1.eba-ipwmze3s.ap-south-1.elasticbeanstalk.com/api"
 
 export default class EditCategory extends React.Component {
 

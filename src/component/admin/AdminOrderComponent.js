@@ -5,7 +5,7 @@ import ErrorComponent from '../ErrorComponent'
 import '../../css/Order.css'
 import OrderSummaryComponent from '../OrderSummaryComponent'
 import { Link } from 'react-router-dom'
-const BACKEND_URL = "http://dryfruitbackend-env-1.eba-ipwmze3s.ap-south-1.elasticbeanstalk.com/api"
+const BACKEND_URL = "https://dryfruitbackend-env-1.eba-ipwmze3s.ap-south-1.elasticbeanstalk.com/api"
 
 export default class AdminOrderComponent extends React.Component {
 

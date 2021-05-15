@@ -3,7 +3,7 @@ import React from 'react'
 import '../css/CategoryList.css'
 import $ from 'jquery'
 import { Link } from 'react-router-dom'
-const BACKEND_URL = "http://dryfruitbackend-env-1.eba-ipwmze3s.ap-south-1.elasticbeanstalk.com/api"
+const BACKEND_URL = "https://dryfruitbackend-env-1.eba-ipwmze3s.ap-south-1.elasticbeanstalk.com/api"
 
 export default class CategoryListComponent extends React.Component {
     constructor(props) {

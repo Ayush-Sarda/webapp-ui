@@ -7,7 +7,7 @@ import AllCategory from './AllCategory'
 import AddCategory from './admin/AddCategory'
 import ErrorComponent from './ErrorComponent'
 import axios from 'axios'
-const BACKEND_URL = "http://dryfruitbackend-env-1.eba-ipwmze3s.ap-south-1.elasticbeanstalk.com/api"
+const BACKEND_URL = "https://dryfruitbackend-env-1.eba-ipwmze3s.ap-south-1.elasticbeanstalk.com/api"
 
 class Category extends react.Component {
     constructor(props) {
