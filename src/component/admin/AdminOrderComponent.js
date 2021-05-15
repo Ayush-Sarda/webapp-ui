@@ -4,6 +4,7 @@ import ProgressComponent from '../ProgressComponent'
 import ErrorComponent from '../ErrorComponent'
 import '../../css/Order.css'
 import OrderSummaryComponent from '../OrderSummaryComponent'
+import { Link } from 'react-router-dom'
 const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 export default class AdminOrderComponent extends React.Component {
@@ -153,7 +154,11 @@ export default class AdminOrderComponent extends React.Component {
                                 </form>
                                 <div class="col-12">
                                     {order.invoice_url ?
-                                        <p class="my-1 text-dark fw-normal">Download invoice <a href={order.invoice_url}>here</a></p>
+                                        <p class="my-1 text-dark fw-normal">Download invoice
+                                        <Link to={order.invoice_url} >
+                                                <a>here</a>
+                                            </Link>
+                                        </p>
                                         :
                                         null
                                     }

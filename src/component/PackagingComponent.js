@@ -2,6 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import Button from './elements/Button'
 import '../css/Packaging.css'
+import { Link } from 'react-router-dom'
 const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 export default class PackagingComponent extends React.Component {
@@ -85,7 +86,9 @@ export default class PackagingComponent extends React.Component {
                 {this.props.isAdmin === true ?
                     <div>
                         <div class="position-absolute" style={{ top: '10%', right: '1%', zIndex: '10' }}>
-                            <a href={`/categories/${this.props.match.params.categoryId}/packaging/${packaging._id}/edit`} class="btn btn-warning btn-sm mx-2">Edit</a>
+                            <Link to={`/categories/${this.props.match.params.categoryId}/packaging/${packaging._id}/edit`} >
+                                <a class="btn btn-warning btn-sm mx-2">Edit</a>
+                            </Link>
                             <button type="button" class="btn btn-danger btn-sm mx-2" data-bs-toggle="modal" data-bs-target={`#deletePackaging${packaging._id}`}>
                                 Delete
                             </button>

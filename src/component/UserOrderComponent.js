@@ -106,7 +106,9 @@ export default class UserOrderComponent extends React.Component {
                             {order.invoice_url ?
                                 <h1 class="fs-6 fw-normal"> Download invoice
                                  <span> </span>
-                                    <a href={order.invoice_url}>here</a>
+                                    <Link to={order.invoice_url}>
+                                        <a>here</a>
+                                    </Link>
                                 </h1>
                                 :
                                 null

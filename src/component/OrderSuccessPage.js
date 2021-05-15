@@ -24,7 +24,9 @@ export default class OrderSuccessPage extends React.Component {
                             </h2>
                             <h2 class="fs-6 fw-normal mb-3 text-break">You can see the status of your order
                             <span> </span>
-                                <a href={`/order/all?order=${this.props.location.order._id}`}>here</a>
+                                <Link to={`/order/all?order=${this.props.location.order._id}`} >
+                                    <a>here</a>
+                                </Link>
                             </h2>
                             <Link to='/categories' >
                                 <h2 class="fs-6 fw-normal text-primary text-decoration-underline">Continue shopping</h2>
