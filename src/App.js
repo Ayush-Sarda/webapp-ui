@@ -191,56 +191,58 @@ class App extends React.Component {
 		return (
 			<div class="App overflow-hidden" style={{ minHeight: "100vh", position: "relative", backgroundColor: '#ffd6b47d' }}>
 				<ErrorBoundary>
-					<Switch>
-						<Route path='/' exact render={() => (<Landing />)} />
-						<Route path='/' render={() => (
-							<div style={{ minHeight: 'calc(100vh - 290px)' }}>
-								<BackgroundComponent />
-								<Nav user={this.state.user} updateUserInfo={this.updateUserInfo} isAdmin={this.state.isAdmin} scrolled={this.state.scrolled} />
-								<div id="main-content">
-									{this.state.scrolled === true ?
-										<div style={{ height: '80px' }}></div>
-										:
-										<div style={{ height: '100px' }}></div>
-									}
-									<Switch>
-										<Route path='/categories/:categoryId/packaging' render={(props) => (
-											<Packaging cart={this.state.cart} cartLoading={this.state.cartLoading} onClickAdd={this.onClickAdd} onClickSub={this.onClickSub} onClickUpdate={this.onClickUpdate} updateCart={this.updateCart} renderCheckout={true} props={props} isAdmin={this.state.isAdmin} />
-										)} />
-										<Route path='/categories' render={(props) => (
-											<Category isAdmin={this.state.isAdmin} props={props} />
-										)} />
-										<Route path='/order/success' exact render={(props) => (<OrderSuccessPage {...props} />)} />
-										<Route path='/order' exact render={() => (
-											<OrderForm cart={this.state.cart} cartLoading={this.state.cartLoading} onClickAdd={this.onClickAdd} onClickSub={this.onClickSub} onClickUpdate={this.onClickUpdate} />
-										)} />
-										<Route path='/login' exact render={(props) => (
-											!this.state.user ?
-												<Login updateUserInfo={this.updateUserInfo} {...props} updateCart={this.updateCart} />
-												:
-												<Redirect to='/' />
-										)} />
-										<Route path='/register' exact render={(props) => (
-											!this.state.user ?
-												<Register props={props} />
-												:
-												<Redirect to='/' />
-										)} />
-										<Route path='/order/all' exact render={(props) => (<UserOrders {...props} />)} />
-										<Route path='/test' exact render={() => (<Landing />)} />
-										<Route path='/admin' render={(props) => (<Admin isAdmin={this.state.isAdmin} {...props} />)} />
-										{/* <Route path='/cart' exact render={() => (
+					<Router basename={process.env.PUBLIC_URL}>
+						<Switch>
+							<Route path='/' exact render={() => (<Landing />)} />
+							<Route path='/' render={() => (
+								<div style={{ minHeight: 'calc(100vh - 290px)' }}>
+									<BackgroundComponent />
+									<Nav user={this.state.user} updateUserInfo={this.updateUserInfo} isAdmin={this.state.isAdmin} scrolled={this.state.scrolled} />
+									<div id="main-content">
+										{this.state.scrolled === true ?
+											<div style={{ height: '80px' }}></div>
+											:
+											<div style={{ height: '100px' }}></div>
+										}
+										<Switch>
+											<Route path='/categories/:categoryId/packaging' render={(props) => (
+												<Packaging cart={this.state.cart} cartLoading={this.state.cartLoading} onClickAdd={this.onClickAdd} onClickSub={this.onClickSub} onClickUpdate={this.onClickUpdate} updateCart={this.updateCart} renderCheckout={true} props={props} isAdmin={this.state.isAdmin} />
+											)} />
+											<Route path='/categories' render={(props) => (
+												<Category isAdmin={this.state.isAdmin} props={props} />
+											)} />
+											<Route path='/order/success' exact render={(props) => (<OrderSuccessPage {...props} />)} />
+											<Route path='/order' exact render={() => (
+												<OrderForm cart={this.state.cart} cartLoading={this.state.cartLoading} onClickAdd={this.onClickAdd} onClickSub={this.onClickSub} onClickUpdate={this.onClickUpdate} />
+											)} />
+											<Route path='/login' exact render={(props) => (
+												!this.state.user ?
+													<Login updateUserInfo={this.updateUserInfo} {...props} updateCart={this.updateCart} />
+													:
+													<Redirect to='/' />
+											)} />
+											<Route path='/register' exact render={(props) => (
+												!this.state.user ?
+													<Register props={props} />
+													:
+													<Redirect to='/' />
+											)} />
+											<Route path='/order/all' exact render={(props) => (<UserOrders {...props} />)} />
+											<Route path='/test' exact render={() => (<Landing />)} />
+											<Route path='/admin' render={(props) => (<Admin isAdmin={this.state.isAdmin} {...props} />)} />
+											{/* <Route path='/cart' exact render={() => (
 												<CartComponent cart={this.state.cart} cartLoading={this.state.cartLoading} onClickAdd={this.onClickAdd} onClickSub={this.onClickSub} onClickUpdate={this.onClickUpdate} renderCheckout={true} />
 											)} /> */}
-										<Route path='/' render={props => (
-											<PageNotFound />
-										)} />
-									</Switch>
+											<Route path='/' render={props => (
+												<PageNotFound />
+											)} />
+										</Switch>
+									</div>
+									<Footer />
 								</div>
-								<Footer />
-							</div>
-						)} />
+							)} />
 						</Switch>
+					</Router>
 				</ErrorBoundary>
 			</div>
 		)

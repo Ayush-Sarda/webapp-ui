@@ -51,7 +51,7 @@ export default class Landing extends React.Component {
             )
         }
         return (
-            <a href="./categories">
+            <a href="/categories">
                 <div style={{ backgroundColor: '#6c3f19', cursor: 'pointer' }}>
                     <div class="rdf-landing-background">
                         {[...Array(321)].map(i => (
