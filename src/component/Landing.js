@@ -5,6 +5,7 @@ import '../css/Landing.css'
 import Loading from './Loading'
 import $ from 'jquery'
 import Sleep from '../utils/Sleep'
+import { Link } from 'react-router-dom'
 const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
 
 export default class Landing extends React.Component {
@@ -51,7 +52,7 @@ export default class Landing extends React.Component {
             )
         }
         return (
-            <a href="/categories">
+            <Link to='/categories'>
                 <div style={{ backgroundColor: '#6c3f19', cursor: 'pointer' }}>
                     <div class="rdf-landing-background">
                         {[...Array(321)].map(i => (
@@ -77,7 +78,7 @@ export default class Landing extends React.Component {
                         </div>
                     </section>
                 </div>
-            </a>
+            </Link>
         )
     }
 }

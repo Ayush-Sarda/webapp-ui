@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import Category from './component/Category';
 import Packaging from './component/Packaging'
 import OrderSuccessPage from './component/OrderSuccessPage';
@@ -191,9 +191,15 @@ class App extends React.Component {
 		return (
 			<div class="App overflow-hidden" style={{ minHeight: "100vh", position: "relative", backgroundColor: '#ffd6b47d' }}>
 				<ErrorBoundary>
-					<Router basename={process.env.PUBLIC_URL}>
+					<Router basename='/'>
 						<Switch>
 							<Route path='/' exact render={() => (<Landing />)} />
+							<Route path='/login' exact render={(props) => (
+								!this.state.user ?
+									<Login updateUserInfo={this.updateUserInfo} {...props} updateCart={this.updateCart} />
+									:
+									<Redirect to='/' />
+							)} />
 							<Route path='/' render={() => (
 								<div style={{ minHeight: 'calc(100vh - 290px)' }}>
 									<BackgroundComponent />
