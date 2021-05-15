@@ -7,7 +7,7 @@ import SubmitButton from './elements/SubmitButton'
 import CartComponent from './CartComponent'
 import ErrorComponent from './ErrorComponent'
 import '../css/OrderForm.css'
-const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
+const BACKEND_URL = "http://dryfruitbackend-env-1.eba-ipwmze3s.ap-south-1.elasticbeanstalk.com/api"
 
 export default class OrderForm extends react.Component {
     constructor(props) {
@@ -124,7 +124,7 @@ export default class OrderForm extends react.Component {
             <div class="container">
                 <main>
                     <div class="pb-3 pt-5 text-center ">
-                        <h2 class="fw-bold text-uppercase" style={{color: '#e18841', letterSpacing: '2px', fontSize: '3rem'}}>Checkout</h2>
+                        <h2 class="fw-bold text-uppercase" style={{ color: '#e18841', letterSpacing: '2px', fontSize: '3rem' }}>Checkout</h2>
                     </div>
 
                     <div class="row g-5">

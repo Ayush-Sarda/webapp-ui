@@ -2,7 +2,7 @@ import '../css/GoogleButton.css'
 
 export default function GoogleButton(props) {
     return (
-        <a href="http://localhost:5000/api/oauth/google" class="button mt-4 ">
+        <a href="http:///oauth/google" class="button mt-4 ">
             <div>
                 <span class="svgIcon t-popup-svg">
                     <svg

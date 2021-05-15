@@ -4,7 +4,7 @@ import FormValidation from '../js/FormValidation'
 import Input from './elements/Input'
 import ErrorComponent from './ErrorComponent'
 import GoogleButton from './GoogleButton'
-const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
+const BACKEND_URL = "http://dryfruitbackend-env-1.eba-ipwmze3s.ap-south-1.elasticbeanstalk.com/api"
 
 class Register extends React.Component {
 
@@ -77,7 +77,7 @@ class Register extends React.Component {
             <div class="d-flex justify-content-center">
                 <div class="rdf-auth-container col-md-5 col-lg-4 col-8 row d-flex justify-content-center mt-4 p-3">
                     <div class="col-12 d-flex justify-content-start" style={{ paddingInline: '22px' }}>
-                        <h1 class="mb-0 fs-1 mt-3" style={{ color: '#734520'}}>Sign Up</h1>
+                        <h1 class="mb-0 fs-1 mt-3" style={{ color: '#734520' }}>Sign Up</h1>
                     </div>
                     <form class="row g-3 needs-validation mt-0" noValidate method="POST" onSubmit={this.handleSubmit}>
                         <Input params={{ name: 'name', required: true, value: this.state.input.name, type: 'text', invalidMessage: 'Please provide a name' }} handleChange={this.handleChange} />

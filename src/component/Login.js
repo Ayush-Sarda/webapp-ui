@@ -5,7 +5,7 @@ import axios from 'axios'
 import Input from './elements/Input'
 import '../css/Auth.css'
 import GoogleButton from './GoogleButton'
-const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
+const BACKEND_URL = "http://dryfruitbackend-env-1.eba-ipwmze3s.ap-south-1.elasticbeanstalk.com/api"
 
 class Login extends React.Component {
 
@@ -90,7 +90,7 @@ class Login extends React.Component {
         return (
             <div class="d-flex justify-content-center">
                 <div class="rdf-auth-container col-md-5 col-lg-4 col-8 row d-flex justify-content-center mt-4 p-3">
-                    <div class="col-12 d-flex justify-content-start" style={{paddingInline: '22px'}}>
+                    <div class="col-12 d-flex justify-content-start" style={{ paddingInline: '22px' }}>
                         <h1 class="mb-0 fs-1" style={{ color: '#734520' }}>Login</h1>
                     </div>
                     <form class="row g-3 needs-validation mt-0" noValidate onSubmit={this.onSubmit} method="POST">

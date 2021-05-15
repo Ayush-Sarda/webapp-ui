@@ -3,7 +3,7 @@ import React from 'react'
 import Button from './elements/Button'
 import '../css/Packaging.css'
 import { Link } from 'react-router-dom'
-const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
+const BACKEND_URL = "http://dryfruitbackend-env-1.eba-ipwmze3s.ap-south-1.elasticbeanstalk.com/api"
 
 export default class PackagingComponent extends React.Component {
     constructor(props) {

@@ -3,7 +3,7 @@ import React from 'react'
 import ErrorComponent from '../ErrorComponent'
 import AdminOrderComponent from './AdminOrderComponent'
 import '../../css/AdminOrders.css'
-const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
+const BACKEND_URL = "http://dryfruitbackend-env-1.eba-ipwmze3s.ap-south-1.elasticbeanstalk.com/api"
 
 export default class Orders extends React.Component {
 

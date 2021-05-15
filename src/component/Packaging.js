@@ -7,7 +7,7 @@ import { Switch, Route } from 'react-router-dom'
 import AddPackaging from './admin/AddPackaging'
 import axios from 'axios'
 import ErrorComponent from './ErrorComponent'
-const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
+const BACKEND_URL = "http://dryfruitbackend-env-1.eba-ipwmze3s.ap-south-1.elasticbeanstalk.com/api"
 
 export default class Packaging extends React.Component {
     constructor(props) {

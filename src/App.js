@@ -25,7 +25,7 @@ import NavbarScroll from './js/NavbarScroll';
 import CategoryListComponent from './component/CategoryListComponent';
 import walnut from './walnut.png'
 import BackgroundComponent from './component/BackgroundComponent';
-const BACKEND_URL = "https://dryfruit-demo.herokuapp.com/api"
+const BACKEND_URL = "http://dryfruitbackend-env-1.eba-ipwmze3s.ap-south-1.elasticbeanstalk.com/api"
 
 class App extends React.Component {
 	constructor(props) {
